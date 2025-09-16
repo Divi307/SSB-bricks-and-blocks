@@ -1,0 +1,131 @@
+/* ===== ABOUT HERO ===== */
+.about-hero {
+  background-color: #fef9f5;
+  padding: 6rem 1.5rem 5rem;
+  text-align: center;
+  box-shadow: inset 0 -4px 15px rgba(211, 84, 0, 0.1);
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  color: #d35400;
+  margin-bottom: 1.25rem;
+  font-weight: 900; /* Strong hero weight */
+  letter-spacing: 0.03em;
+  text-shadow: 1px 1px 3px rgba(211, 84, 0, 0.3);
+}
+
+.about-hero p {
+  font-size: 1.3rem;
+  color: #555;
+  max-width: 720px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-weight: 400; /* Lighter weight for body text */
+  letter-spacing: 0.01em;
+}
+
+/* ===== ABOUT DETAILS ===== */
+.about-details {
+  background-color: #fff;
+  padding: 5rem 1.5rem 7rem;
+  max-width: 900px;
+  margin: 2% auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #444;
+  box-shadow: 0 8px 24px rgba(211, 84, 0, 0.12);
+  border-radius: 16px;
+}
+
+.about-details h2 {
+  color: #d35400;
+  font-size: 2.25rem;
+  margin-top: 2%;
+  margin-bottom: 1.25rem;
+  font-weight: 700; /* Moderate heading weight */
+  border-bottom: 4px solid #d35400;
+  padding-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+}
+
+.about-details p {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+  font-weight: 400; /* Lighter weight for paragraphs */
+  color: #555;
+}
+
+.about-details ul {
+  list-style-type: disc;
+  padding-left: 1.75rem;
+  margin-bottom: 2.5rem;
+  color: #555;
+  font-size: 1.15rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-details ul li {
+  margin-bottom: 1rem;
+  font-weight: 400; /* Lighter weight for list items */
+  letter-spacing: 0.01em;
+}
+
+.about-details ul li strong {
+  color: #d35400;
+  font-weight: 700; /* Emphasized strong text */
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+  display: inline-block;
+  background-color: #d35400;
+  color: #fff;
+  font-weight: 700; /* Slightly bold for button */
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  box-shadow: 0 7px 18px rgba(211, 84, 0, 0.65);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  margin-top: 2rem;
+  letter-spacing: 0.02em;
+  user-select: none;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #e67e22;
+  box-shadow: 0 10px 28px rgba(230, 126, 34, 0.85);
+  outline: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-hero p {
+    font-size: 1.1rem;
+  }
+
+  .about-details h2 {
+    font-size: 1.9rem;
+    margin-top: 2rem;
+  }
+
+  .about-details p,
+  .about-details ul {
+    font-size: 1rem;
+  }
+
+  .btn-primary {
+    font-size: 1.1rem;
+    padding: 0.85rem 2.5rem;
+  }
+}

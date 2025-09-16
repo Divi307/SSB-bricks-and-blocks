@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About | Sawariya Bricks & Blocks</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="navbar-footer.css" />
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="/" class="brand">
+        <img src="/static/imgs/logo.png" alt="Logo" class="logo" />
+        <span class="brand-name">Sawariya Bricks & Blocks</span>
+      </a>
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="product.html" class="active">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+ <!-- ABOUT HERO -->
+<section class="about-hero">
+  <div class="container">
+    <h1>About Shree Sawariya Bricks & Blocks</h1>
+    <p>
+      At Shree Sawariya Bricks & Blocks, we are passionate about delivering durable, eco-friendly construction materials to builders and homeowners across India. With decades of expertise, we combine traditional craftsmanship with modern technology to produce premium quality bricks and blocks that stand the test of time.
+    </p>
+  </div>
+</section>
+
+<!-- ABOUT DETAILS -->
+<section class="about-details">
+  <div class="container">
+    <h2>Our Mission</h2>
+    <p>
+      Our mission is to empower construction projects with sustainable, high-strength materials that promote environmental responsibility without compromising on quality or affordability. We strive to innovate continuously and support our clients with reliable products and exceptional service.
+    </p>
+
+    <h2>Why Choose Us?</h2>
+    <ul>
+      <li><strong>Quality Assurance:</strong> Every batch undergoes rigorous testing to ensure superior strength and durability.</li>
+      <li><strong>Eco-Friendly Production:</strong> We utilize fly ash and other sustainable materials to reduce environmental impact.</li>
+      <li><strong>Customer-Centric Approach:</strong> Tailored solutions and responsive support to meet your unique project needs.</li>
+      <li><strong>Experienced Team:</strong> Skilled professionals dedicated to excellence in manufacturing and delivery.</li>
+    </ul>
+
+    <h2>Our Product Range</h2>
+    <p>
+      From lightweight AAC blocks to robust fly-ash bricks and stylish paver blocks, our diverse product range caters to residential, commercial, and industrial construction. Each product is designed to provide optimal strength, thermal insulation, and aesthetic appeal.
+    </p>
+
+    <a href="/product.html" class="btn-primary">Explore Our Products</a>
+  </div>
+</section>
+
+
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-about">
+        <h3>About Us</h3>
+        <p>Shree Sawariya Bricks and Blocks is a supplier of eco-friendly 
+          construction materials, specializing in flyash bricks, AAC blocks, and premium pavers.
+           We provide durable, cost-effective building solutions that combine superior quality with 
+           environmental sustainability for residential and commercial projects.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/product.html">Products</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>Khasra No. 209/1/5/1/1, Gram Sulakhedi, Indore, M.P.</p>
+        <p>+91 9977991806</p>
+        <p>shreesawariyabricks@gmail.com</p>
+        <div class="socials">
+          <a href="#"><img src="/static/imgs/fblogo.png" alt="fb"></a>
+          <a href="#"><img src="/static/imgs/iglogo.png" alt="ig"></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">© 2025 Sawariya Bricks & Blocks</div>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open'); 
+      navLinks.classList.toggle('open');
+
+      // Update aria-expanded for accessibility
+      const expanded = hamburger.classList.contains('open');
+      hamburger.setAttribute('aria-expanded', expanded);
+    });
+  </script>
+  <script>
+    // Get the current page filename
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+// Remove active from all
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.classList.remove('active');
+});
+
+// Add active based on current page
+switch(currentPage) {
+    case 'index.html':
+    case '':
+        document.querySelector('.nav-links a[href*="index"]')?.classList.add('active');
+        break;
+    case 'about.html':
+        document.querySelector('.nav-links a[href*="about"]')?.classList.add('active');
+        break;
+    case 'products.html':
+        document.querySelector('.nav-links a[href*="products"]')?.classList.add('active');
+        break;
+    case 'contact.html':
+        document.querySelector('.nav-links a[href*="contact"]')?.classList.add('active');
+        break;
+}
+
+  </script>
+</body>
+</html>

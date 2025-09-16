@@ -1,0 +1,129 @@
+/* Container and headings */
+.contact-section {
+  padding: 3rem 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(211, 84, 0, 0.15);
+  text-align: center;
+}
+
+.contact-section h1 {
+  font-size: 2.75rem;
+  color: #d35400;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.contact-section p {
+  font-size: 1.125rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Form */
+#contact-form {
+  text-align: left;
+}
+
+/* Form group */
+.form-group {
+  margin-bottom: 1.75rem;
+  position: relative;
+}
+
+/* Inputs and textarea */
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #d35400;
+  padding: 0.75rem 0;
+  font-size: 1.125rem;
+  font-family: inherit;
+  color: #2c3e50;
+  background: transparent;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline-offset: 2px;
+  resize: vertical;
+}
+
+/* Remove default textarea resize handle on some browsers */
+.form-group textarea {
+  min-height: 120px;
+}
+
+/* Placeholder styling */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #aaa;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+/* On focus and hover */
+.form-group input:hover,
+.form-group textarea:hover,
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #f39c12;
+  box-shadow: 0 2px 8px rgba(243, 156, 18, 0.5);
+  color: #2c3e50;
+}
+
+.form-group input:focus::placeholder,
+.form-group textarea:focus::placeholder {
+  color: transparent;
+}
+
+/* Button */
+.btn-primary {
+  background-color: #d35400;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.85rem 2.5rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.25rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(211, 84, 0, 0.6);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #f39c12;
+  box-shadow: 0 6px 16px rgba(243, 156, 18, 0.8);
+  outline: none;
+}
+
+/* Form status message */
+.form-status {
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: #d35400;
+  min-height: 1.2em;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .contact-section h1 {
+    font-size: 2rem;
+  }
+
+  .btn-primary {
+    font-size: 1.1rem;
+  }
+}

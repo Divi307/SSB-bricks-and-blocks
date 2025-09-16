@@ -1,0 +1,175 @@
+/* ===== Product Section Container ===== */
+.product-section {
+  padding: 4rem 1.5rem 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #fafafa;
+}
+
+/* Main Heading */
+.product-section h1#OP {
+  text-align: center;
+  font-size: 3.75rem;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+  text-decoration: underline;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+  font-weight: 700; /* Reduced from 900 */
+  letter-spacing: 0.04em;
+}
+
+/* Subsection Headings (Our Products) */
+.product-section h1 {
+  font-size: 3rem; /* Slightly bigger for hero effect */
+  margin: 3.5rem 0 3rem;
+  color: #d35400;
+  text-align: center;
+  font-weight: 900; /* Stronger weight for hero style */
+  letter-spacing: 0.05em;
+  text-shadow: 1px 1px 2px rgba(211, 84, 0, 0.3);
+}
+
+/* ===== Product Grid ===== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem;
+}
+
+/* ===== Product Card ===== */
+.product-card {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(145deg, #ffffff, #f9f6f2);
+  border-radius: 18px;
+  padding: 2rem 1.75rem 2.5rem;
+  box-shadow: 0 8px 24px rgba(211, 84, 0, 0.15);
+  text-align: center;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: default;
+}
+
+.product-card:hover,
+.product-card:focus-within {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 40px rgba(211, 84, 0, 0.35);
+  outline: none;
+}
+
+/* Product Image */
+.product-card img {
+  width: 100%;
+  height: 260px;
+  border-radius: 14px;
+  object-fit: cover;
+  border-bottom: 3px solid #f0f0f0;
+  margin-bottom: 1.5rem;
+  background-color: #f5f5f5;
+  box-shadow: 0 6px 16px rgba(211, 84, 0, 0.12);
+  transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover img,
+.product-card:focus-within img {
+  box-shadow: 0 10px 28px rgba(211, 84, 0, 0.25);
+}
+
+/* Product Title */
+.product-card h2 {
+  margin: 0 0 1.25rem;
+  color: #d35400;
+  font-size: 1.6rem;
+  font-weight: 700; /* Reduced from 800 */
+  letter-spacing: 0.02em;
+  text-shadow: 1px 1px 2px rgba(211, 84, 0, 0.15);
+}
+
+/* Product Description */
+.product-card p {
+  color: #555;
+  padding: 0 0.75rem 1.5rem;
+  flex-grow: 1;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 400; /* Lighter weight */
+}
+
+/* Product Details List */
+.product-card ul {
+  list-style-type: disc;
+  padding-left: 1.75rem;
+  margin: 0 0 1.75rem;
+  color: #666;
+  font-size: 1rem;
+  text-align: left;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.product-card ul li {
+  margin-bottom: 0.75rem;
+  font-weight: 400; /* Lighter weight */
+  letter-spacing: 0.01em;
+}
+
+/* Enquiry Button */
+.enquiry-btn {
+  display: block;
+  width: 65%;
+  max-width: 240px;
+  margin: 2rem auto 0;
+  padding: 1rem 0;
+  background-color: #d35400;
+  color: #fff;
+  border: none;
+  border-radius: 35px;
+  font-size: 1.15rem;
+  font-weight: 600; /* Slightly lighter */
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(211, 84, 0, 0.7);
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+}
+
+.enquiry-btn:hover,
+.enquiry-btn:focus {
+  background-color: #e67e22;
+  box-shadow: 0 12px 32px rgba(230, 126, 34, 0.9);
+  outline: none;
+}
+
+/* Placeholder fallback styles for images */
+.product-card img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+  .product-section h1#OP {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .product-section h1 {
+    font-size: 2.5rem;
+    margin: 2.5rem 0 2rem;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .enquiry-btn {
+    width: 85%;
+  }
+}

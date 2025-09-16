@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sawariya Bricks & Blocks | Home</title>
+  <link rel="stylesheet" href="navbar-footer.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="home.css">
+</head>
+<body> 
+
+  <!-- ===== NAVBAR ===== -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="/" class="brand">
+        <img src="../imgs/logo.png" alt="Logo" class="logo">
+        <span class="brand-name">Sawariya Bricks & Blocks</span>
+      </a>
+
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Shree Sawariya Bricks & Blocks</h1>
+      <p>Your trusted partner for strong & sustainable construction materials.</p>
+      <a href="/product.html" class="btn-primary">Explore Products</a>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT PREVIEW ===== -->
+  <section class="home-about">
+    <div class="container">
+      <div class="about-text">
+        <h2>Who We Are</h2>
+        <p>
+          With years of expertise, we manufacture premium AAC blocks, fly-ash bricks,
+          and paver blocks. Quality and durability are at the heart of everything we deliver.
+        </p>
+        <a href="/about.html" class="btn-secondary">Learn More</a>
+      </div>
+      <div class="about-image">
+        <img src="../imgs/" alt="Bricks & Blocks">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS PREVIEW ===== -->
+  <section class="home-products">
+    <div class="container">
+      <h2>Our Products</h2>
+      <div class="product-cards">
+        <div class="product-card">
+          <img src="../imgs/AACblock.webp" alt="AAC Blocks">
+          <h3>AAC Blocks</h3>
+          <p>Lightweight, high strength & thermal insulation.</p>
+          <a href="/contact.html" class="btn-enquire">Enquire Now</a>
+        </div>
+        <div class="product-card">
+          <img src="../imgs/fly ash brick.png" alt="Fly-ash Bricks">
+          <h3>Fly-ash Bricks</h3>
+          <p>Eco-friendly solution for durable structures.</p>
+          <a href="/contact.html" class="btn-enquire">Enquire Now</a>
+        </div>
+        <div class="product-card">
+          <img src="..//imgs/rectangle paver.webp" alt="Paver Blocks">
+          <h3>Paver Blocks</h3>
+          <p>Stylish & robust paving options for outdoors.</p>
+          <a href="/contact.html" class="btn-enquire">Enquire Now</a>
+        </div>
+      </div>
+      <div class="more-link">
+        <a href="/product.html" class="btn-secondary">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT CTA ===== -->
+  <section class="home-contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p>Need the right bricks or blocks for your project? Let us know your requirements.</p>
+      <a href="/contact.html" class="btn-primary">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-columns">
+      <div class="footer-about">
+        <h3>About Us</h3>
+        <p>Shree Sawariya Bricks and Blocks is a supplier of eco-friendly 
+          construction materials, specializing in flyash bricks, AAC blocks, and premium pavers.
+           We provide durable, cost-effective building solutions that combine superior quality with 
+           environmental sustainability for residential and commercial projects.</p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/product.html">Products</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+
+      <div class="footer-contact">
+        <h3>Contact</h3>
+        <p>Khasra No. 209/1/5/1/1, Gram Sulakhedi, Indore, M.P.</p>
+        <p>+91 9977991806</p>
+        <p>shreesawariyabricks@gmail.com</p>
+        <div class="socials">
+          <a href="#"><img src="/static/imgs/fblogo.png" alt="fb"></a>
+          <a href="#"><img src="/static/imgs/iglogo.png" alt="ig"></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2025 Sawariya Bricks & Blocks
+    </div>
+  </footer>
+
+  <script>
+    // Hamburger menu logic
+    const burger = document.querySelector('.hamburger');
+    const links = document.querySelector('.nav-links');
+    burger.addEventListener('click', () => {
+      links.classList.toggle('open');
+      burger.classList.toggle('open');
+    });
+  </script>
+  <script>
+    // Get the current page filename
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+// Remove active from all
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.classList.remove('active');
+});
+
+// Add active based on current page
+switch(currentPage) {
+    case 'index.html':
+    case '':
+        document.querySelector('.nav-links a[href*="index"]')?.classList.add('active');
+        break;
+    case 'about.html':
+        document.querySelector('.nav-links a[href*="about"]')?.classList.add('active');
+        break;
+    case 'products.html':
+        document.querySelector('.nav-links a[href*="products"]')?.classList.add('active');
+        break;
+    case 'contact.html':
+        document.querySelector('.nav-links a[href*="contact"]')?.classList.add('active');
+        break;
+}
+
+  </script>
+</body>
+</html>

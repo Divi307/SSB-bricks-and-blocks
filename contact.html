@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Sawariya Bricks & Blocks</title>
+  <link rel="stylesheet" href="navbar-footer.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="navbar">
+    <a href="/" class="brand">
+      <img src="../imgs/logo.png" alt="Logo" class="logo">
+      <span class="brand-name">Sawariya Bricks & Blocks</span>
+    </a>
+    <button class="hamburger"><span></span><span></span><span></span></button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="contact-section">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>Have a question or want to place an order? Fill out the form below and we’ll get back to you soon.</p>
+    <form id="contact-form" autocomplete="off">
+      <div class="form-group">
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Email" required />
+      </div>
+      <div class="form-group">
+        <input type="tel" id="phone" name="phone" placeholder="Phone (optional)" />
+      </div>
+      <div class="form-group">
+        <textarea id="message" name="message" placeholder="Message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn-primary">Send</button>
+      <p class="form-status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="footer-columns">
+    <div class="footer-about">
+      <h3>About Us</h3>
+      <p>Shree Sawariya Bricks and Blocks is a supplier of eco-friendly 
+          construction materials, specializing in flyash bricks, AAC blocks, and premium pavers.
+           We provide durable, cost-effective building solutions that combine superior quality with 
+           environmental sustainability for residential and commercial projects.</p>
+    </div>
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/product.html">Products</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <div class="footer-contact">
+      <h3>Contact</h3>
+      <p>Khasra No. 209/1/5/1/1, Gram Sulakhedi, Indore, M.P.</p>
+      <p>+91 9977991806</p>
+      <p>shreesawariyabricks@gmail.com</p>
+      <div class="socials">
+          <a href="#"><img src="/static/imgs/fblogo.png" alt="fb"></a>
+          <a href="#"><img src="/static/imgs/iglogo.png" alt="ig"></a>
+        </div>
+    </div>
+  </div>
+  <div class="copyright">© 2025 Sawariya Bricks & Blocks</div>
+</footer>
+
+<script>
+  const burger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    burger.classList.toggle('open');
+  });
+
+  document.getElementById('contact-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const statusEl = this.querySelector('.form-status');
+  statusEl.textContent = '';
+  const submitBtn = this.querySelector('button[type="submit"]');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  const formData = {
+    name: this.name.value.trim(),
+    email: this.email.value.trim(),
+    phone: this.phone.value.trim(),
+    message: this.message.value.trim(),
+  };
+
+  // Basic validation (optional, since HTML required attributes exist)
+  if (!formData.name || !formData.email || !formData.message) {
+    statusEl.textContent = 'Please fill in all required fields.';
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send';
+    return;
+  }
+
+  try {
+    const response = await fetch('YOUR_SCRIPT_URL_HERE', {
+      method: 'POST',
+      mode: 'no-cors', // Google Apps Script requires no-cors for simple POST
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    // Since mode: no-cors, we can't check response.ok reliably
+    statusEl.style.color = 'green';
+    statusEl.textContent = 'Thank you! Your message has been sent.';
+    this.reset();
+  } catch (error) {
+    statusEl.style.color = '#e74c3c';
+    statusEl.textContent = 'Oops! Something went wrong. Please try again later.';
+    console.error('Form submission error:', error);
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send';
+  }
+});
+
+</script>
+<script>
+    // Get the current page filename
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+// Remove active from all
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.classList.remove('active');
+});
+
+// Add active based on current page
+switch(currentPage) {
+    case 'index.html':
+    case '':
+        document.querySelector('.nav-links a[href*="index"]')?.classList.add('active');
+        break;
+    case 'about.html':
+        document.querySelector('.nav-links a[href*="about"]')?.classList.add('active');
+        break;
+    case 'products.html':
+        document.querySelector('.nav-links a[href*="products"]')?.classList.add('active');
+        break;
+    case 'contact.html':
+        document.querySelector('.nav-links a[href*="contact"]')?.classList.add('active');
+        break;
+}
+
+  </script>
+</body>
+</html>
